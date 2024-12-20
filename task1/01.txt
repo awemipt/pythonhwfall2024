@@ -1,0 +1,50 @@
+import pandas as pd 
+from sklearn import datasets
+iris = datasets.load_iris()
+
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df['target'] = iris.target
+df.head()
+
+1) Перемешать данные
+https://stackoverflow.com/questions/29576430/shuffle-dataframe-rows
+
+2) Разбейте выборку 80 на 20 (train и test)
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html
+
+3) Отделите target из каждой выборки
+(X_train, y_train, X_test, y_test)
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html
+
+4) Пройтись по строкам из X_test и вычесть каждую из X_train
+https://stackoverflow.com/questions/16476924/how-can-i-iterate-over-rows-in-a-pandas-dataframe
+
+5) Возвести в квадрат и взять сумму по строкам
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pow.html
+https://stackoverflow.com/questions/25748683/pandas-sum-dataframe-rows-for-given-columns
+
+6) Отсортировать и найти 5 ближайших
+https://pandas.pydata.org/docs/reference/api/pandas.Series.sort_values.html
+
+7) Возьмите значения этих точек в y_train
+https://pandas.pydata.org/docs/reference/api/pandas.Series.index.html
+
+8) Взять моду
+https://pandas.pydata.org/docs/reference/api/pandas.Series.mode.html
+
+9) Скопируйте y_train в y_pred
+https://pandas.pydata.org/docs/reference/api/pandas.Series.copy.html
+
+10) Теперь моду сохраните в y_pred
+
+11) Сравните y_pred == y_test и посчитайте среднее
+
+12) Поменяйте разбивку 20 на 80 из пункта #2 и повторите до #11
+
+13-15) Создайте класс KNN и метод __init__
+16-18) Создайте методы fit, predict, score
+19) Меняйте количество соседей из #6 и считайте score
+20) Постройте график по этим метрикам
+
+

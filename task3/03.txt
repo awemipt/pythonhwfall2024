@@ -1,0 +1,30 @@
+Написать самому ближайших соседей (регрессия на ирисе)
+Представьте, что лейбл класса - это вещественная величина.
+
+import numpy as np
+from sklearn import datasets
+iris = datasets.load_iris()
+
+X, y = iris.data, iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+1-2) Написать свой класс StandardScaler
+1.1) Использовать NumPy внутри методов
+(x - mean) / std
+1.2) Реализовать атрибуты mean и std
+1.3) Реализовать методы fit, transform, fit_transform
+1.4) Проверьте, чтобы scaler.fit_transform(X_train) вернул данные с std=1 и mean=0
+1.5) Применить transform для X_test
+
+3-4) Написать класс KNeighborsRegressor(n_neighbors) с методами:
+3.1) fit - обучение (Евклидово расстояние)
+distances = np.linalg.norm axis=?
+nearest_indices = np.argsort
+nearest_neighbors = y_train[nearest_indices]
+nearest_neighbors.mean()
+3.2) predict - предсказание
+
+5) Метрика WAPE
+Метод score должен вернуть WAPE
+Формулу WAPE можно посмотреть в "3) WAPE.pdf"
+
